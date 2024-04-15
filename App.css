@@ -1,0 +1,189 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #cbc7dd;
+}
+h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #007bff; /* Blue color */
+  margin-bottom: 20px; /* Add some space below the heading */
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #cfc2d8;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+label {
+  flex: 0 0 50%;
+  margin-bottom: 10px;
+}
+
+input,
+select,
+button {
+  flex: 0 0 50%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+
+
+
+
+/* Animation for form elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease-in-out; /* Apply fadeIn animation to the form */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333; /* Text color */
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 0.5s ease-in-out forwards; /* Apply fadeIn animation to labels */
+  animation-delay: 0.2s; /* Delay the animation */
+}
+
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc; /* Border color */
+  border-radius: 8px;
+  box-sizing: border-box;
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 0.5s ease-in-out forwards; /* Apply fadeIn animation to inputs */
+  animation-delay: 0.4s; /* Delay the animation */
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 0.5s ease-in-out forwards; /* Apply fadeIn animation to button */
+  animation-delay: 0.6s; /* Delay the animation */
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Button background color on hover */
+}
+
+/* Animation for heading */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #007bff; /* Blue color */
+  margin-bottom: 20px; /* Add some space below the heading */
+  animation: slideInDown 0.5s ease-in-out; /* Apply slideInDown animation to the heading */
+  display: block; /* Set the display property to block */
+}
