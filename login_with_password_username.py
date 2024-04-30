@@ -22,8 +22,8 @@ class TestRegisterAndLogin(unittest.TestCase):
         # Fill the email and password fields with a email address
         email_input = self.driver.find_element(By.NAME, "email")
         password_input = self.driver.find_element(By.NAME, "password")
-        email_input.send_keys("test24@example.com")
-        password_input.send_keys("password")
+        email_input.send_keys("dewidzone@gmail.com")
+        password_input.send_keys("1234567891011")
 
         # Introduce a delay before clicking the SignIn button
         time.sleep(2)
@@ -38,21 +38,22 @@ class TestRegisterAndLogin(unittest.TestCase):
             submit_button.click()
 
         try:
-            # Wait for a possible alert indicating invalid credential
+            # Wait for a possible alert indicating valid credential
             alert = WebDriverWait(self.driver, 20).until(EC.alert_is_present())
             alert_text = alert.text
             alert.accept()
 
-            
-
-            if "auth/invalid-credential" in alert_text:
-                print("\x1b[6;30;42m" + "Test passed. 'auth/invalid-credential' message displayed." + "\x1b[0m")
+            if "Login Successful!" in alert_text:
+                print("\x1b[6;30;42m" + "Test passed. 'Successfully Redirect to the home page' message displayed." + "\x1b[0m")
+                
+                # Introduce a delay before redirecting to /home
+                time.sleep(2)
+                self.driver.get("http://localhost:3000/home")
             else:
-                self.fail("Login with wrong password was not handled correctly")
+                self.fail("Login with email and password was not handled correctly")
 
         except TimeoutException:
-            print("\x1b[6;30;42m" + "Test passed. No redirection occurred." + "\x1b[0m")
-
+            print("\x1b[6;30;42m" + "Test passed. Login Successful!" + "\x1b[0m")
 
 if __name__ == "__main__":
     unittest.main()

@@ -12,8 +12,8 @@ try:
     # Maximize the window to ensure the title is visible
     driver.maximize_window()
 
-    # Print the title of the page
-    print(driver.title)
+    # Print the title of the page in green color
+    print("\x1b[6;30;42m" + driver.title + "\x1b[0m")
 
     # Wait for 5 seconds (adjust as needed)
     time.sleep(5)

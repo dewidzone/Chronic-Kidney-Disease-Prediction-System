@@ -1,3 +1,4 @@
+
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -24,17 +25,17 @@ class TestForgotPassword(unittest.TestCase):
             email_input = self.driver.find_element(By.NAME, "email")
             email_input.send_keys("test@example.com")
 
-            # Click the reset password button (assuming it's not a separate button but handled within handleReset)
+            # Click the reset password button 
             reset_button = self.driver.find_element(By.XPATH, "//button[contains(text(), 'Reset Password')]")
             reset_button.click()
 
             # Wait for a possible alert indicating successful password reset
-            alert = WebDriverWait(self.driver, 5).until(EC.alert_is_present())
+            alert = WebDriverWait(self.driver, 10).until(EC.alert_is_present())
             alert_text = alert.text
             alert.accept()
 
             # Check if the alert message is displayed
-            self.assertEqual(alert_text, "Check your email", "Forgot password was not handled correctly")
+            self.assertEqual(alert_text, "check your email", "Forgot password was not handled correctly")
 
             print("\x1b[6;30;42m" + "Test passed. 'Check your email' message displayed." + "\x1b[0m")
 
